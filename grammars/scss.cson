@@ -1,0 +1,284 @@
+'fileTypes': [
+  'scss'
+]
+'foldingStartMarker': '/\\*|^#|^\\*|^\\b|^\\.'
+'foldingStopMarker': '\\*/|^\\s*$'
+'name': 'SCSS'
+'patterns': [
+  {
+    'begin': '/\\*'
+    'end': '\\*/'
+    'name': 'comment.block.sass'
+    'patterns': [
+      {
+        'include': '#comment-tag'
+      }
+    ]
+  }
+  {
+    'include': '#double-dash'
+  }
+  {
+    'include': '#double-quoted'
+  }
+  {
+    'include': '#single-quoted'
+  }
+  {
+    'include': '#interpolation'
+  }
+  {
+    'include': '#placeholder-selector'
+  }
+  {
+    'include': '#variable-library'
+  }
+  {
+    'include': '#numeric'
+  }
+  {
+    'include': '#unit'
+  }
+  {
+    'include': '#flag'
+  }
+  {
+    'include': '#comma'
+  }
+  {
+    'match': '(?<=@include)\\s[a-zA-Z0-9_-]+'
+    'name': 'support.function.name.sass.library'
+  }
+  {
+    'match': '(?<=@mixin)\\s[a-zA-Z0-9_-]+'
+    'name': 'support.function.name.sass.library, mixin.in.project'
+  }
+  {
+    'match': '(?<=@function)\\s[a-zA-Z0-9_-]+'
+    'name': 'support.function.name.sass.library, function.in.project'
+  }
+  {
+    'match': '(?<=@import)\\s[a-zA-Z0-9_/.*-]+'
+    'name': 'string.quoted.double.css.sass'
+  }
+  {
+    'match': '(@media\\s(all|aural|braille|embossed|handheld|print|projection|screen|tty|tv)*)|(@else\\s(if)*)|@[a-zA-Z-]+'
+    'name': 'keyword.control.at-rule.css.sass'
+  }
+  {
+    'match': '[=][a-zA-Z0-9_-]+'
+    'name': 'keyword.control.at-rule.css.sass.library, mixin.in.project'
+  }
+  {
+    'match': '[+][a-zA-Z0-9_-]+'
+    'name': 'keyword.control.at-rule.css.sass.library'
+  }
+  {
+    'begin': '#'
+    'end': '\\s|(?=,)|(?=;)|(?=\\()|(?=\\))|(?=\\.)|(?=\\[)|(?={)'
+    'name': 'entity.other.attribute-name.id.css.sass'
+    'patterns': [
+      {
+        'include': '#interpolation'
+      }
+      {
+        'include': '#pseudo-class'
+      }
+    ]
+  }
+  {
+    'begin': '\\.'
+    'end': '\\s|(?=,)|(?=;)|(?=\\()|(?=\\))|(?=\\[)|(?={)'
+    'name': 'entity.other.attribute-name.class.css.sass'
+    'patterns': [
+      {
+        'include': '#interpolation'
+      }
+      {
+        'include': '#pseudo-class'
+      }
+    ]
+  }
+  {
+    'begin': '\\['
+    'end': '\\]'
+    'name': 'entity.other.attribute-selector.sass'
+    'patterns': [
+      {
+        'include': '#double-quoted'
+      }
+      {
+        'include': '#single-quoted'
+      }
+      {
+        'match': '\\^|\\$|\\*|~'
+        'name': 'keyword.other.regex.sass'
+      }
+    ]
+  }
+  {
+    'match': '(?<=\\]|\\)|not\\():[a-z:-]+|::[a-z:-]+'
+    'name': 'entity.other.attribute-name.pseudo-class.css.sass'
+  }
+  {
+    'begin': ':'
+    'end': '(?=;)|(?=\\s\\()|(?=and\\()|(?={)|(?=})'
+    'name': 'meta.property-list.css.sass'
+    'patterns': [
+      {
+        'include': '#double-dash'
+      }
+      {
+        'include': '#double-quoted'
+      }
+      {
+        'include': '#single-quoted'
+      }
+      {
+        'include': '#placeholder-selector'
+      }
+      {
+        'include': '#interpolation'
+      }
+      {
+        'include': '#variable'
+      }
+      {
+        'include': '#rgb-value'
+      }
+      {
+        'include': '#numeric'
+      }
+      {
+        'include': '#unit'
+      }
+      {
+        'include': '#flag'
+      }
+      {
+        'include': '#comma'
+      }
+      {
+        'include': '#function'
+      }
+      {
+        'include': '#function-content'
+      }
+      {
+        'include': '#operator'
+      }
+      {
+        'match': '[a-zA-Z0-9_-]+'
+        'name': 'meta.property-value.css.sass, support.constant.property-value.css.sass'
+      }
+    ]
+  }
+  {
+    'include': '#rgb-value'
+  }
+  {
+    'include': '#function'
+  }
+  {
+    'include': '#function-content'
+  }
+  {
+    'begin': '(?<!\\-|\\()\\b(a|abbr|acronym|address|area|article|aside|audio|b|base|big|blockquote|body|br|button|canvas|caption|cite|code|col|colgroup|datalist|dd|del|details|dfn|dialog|div|dl|dt|em|eventsource|fieldset|figure|figcaption|footer|form|frame|frameset|(h[1-6])|head|header|hgroup|hr|html|i|iframe|img|input|ins|kbd|label|legend|li|link|map|mark|menu|meta|meter|nav|noframes|noscript|object|ol|optgroup|option|output|p|param|pre|progress|q|samp|script|section|select|small|span|strike|strong|style|sub|summary|sup|table|tbody|td|textarea|tfoot|th|thead|time|title|tr|tt|ul|var|video|main|svg|rect|circle|ellipse|line|polyline|polygon|path|text|x)\\b(?!\\-|\\)|:\\s)|&|\\*'
+    'end': '\\s|(?=,)|(?=;)|(?=\\()|(?=\\))|(?=\\.)|(?=\\[)|(?={)'
+    'name': 'entity.name.tag.css.sass'
+    'patterns': [
+      {
+        'include': '#pseudo-class'
+      }
+    ]
+  }
+  {
+    'include': '#operator'
+  }
+  {
+    'match': '[a-z-]+(?=:)|\\b(from|through|to|in)\\b'
+    'name': 'support.type.property-name.css.sass'
+  }
+  {
+    'match': '[a-zA-Z0-9_-]+'
+    'name': 'meta.property-value.css.sass, support.constant.property-value.css.sass'
+  }
+]
+'repository':
+  'comma':
+    'match': '\\band\\b|,'
+    'name': 'comment.punctuation.comma.sass'
+  'comment-tag':
+    'begin': '(?<={{)'
+    'end': '(?=}})'
+    'name': 'comment.tag.sass'
+  'double-dash':
+    'begin': '//'
+    'end': '$\\n?'
+    'name': 'comment.line.double-dash.sass'
+    'patterns': [
+      {
+        'include': '#comment-tag'
+      }
+    ]
+  'double-quoted':
+    'begin': '"'
+    'end': '"'
+    'name': 'string.quoted.double.css.sass'
+  'flag':
+    'match': '!(important|default|optional)'
+    'name': 'keyword.other.important.css.sass'
+  'function':
+    'match': '(?<=[\\s|\\(|,])(?!url|format|attr)[a-zA-Z0-9_-][\\w-]*(?=\\()'
+    'name': 'support.function.name.sass'
+  'function-content':
+    'begin': '(?<=url\\(|format\\(|attr\\()'
+    'end': '.(?=\\))'
+    'name': 'string.quoted.double.css.sass'
+  'interpolation':
+    'begin': '#{'
+    'end': '}'
+    'name': 'support.function.interpolation.sass'
+    'patterns': [
+      {
+        'include': '#variable'
+      }
+      {
+        'include': '#numeric'
+      }
+      {
+        'include': '#unit'
+      }
+      {
+        'include': '#comma'
+      }
+    ]
+  'numeric':
+    'match': '(-|\\+|\\.)?[0-9]+(\\.[0-9]+)?n?'
+    'name': 'constant.numeric.css.sass'
+  'operator':
+    'match': '\\+|\\s-\\s|\\*|/|%|=|!|<|>|~'
+    'name': 'keyword.operator.sass'
+  'placeholder-selector':
+    'match': '%[a-zA-Z0-9_-]+'
+    'name': 'entity.other.attribute-name.placeholder-selector.sass'
+  'pseudo-class':
+    'match': ':[a-z:-]+'
+    'name': 'entity.other.attribute-name.pseudo-class.css.sass'
+  'rgb-value':
+    'match': '(#)([0-9a-fA-F]{3}|[0-9a-fA-F]{6})\\b'
+    'name': 'constant.other.color.rgb-value.css.sass'
+  'single-quoted':
+    'begin': '\''
+    'end': '\''
+    'name': 'string.quoted.single.css.sass'
+  'unit':
+    'match': '(?<=[\\d])(ch|cm|deg|dpcm|dpi|dppx|em|ex|grad|Hz|in|kHz|mm|ms|pc|pt|px|rad|rem|s|turn|vh|vmin|vw|%)'
+    'name': 'keyword.other.unit.css.sass'
+  'variable-library':
+    'match': '\\$[a-zA-Z0-9_-]+'
+    'name': 'variable.other.library'
+  'variable':
+    'match': '\\$[a-zA-Z0-9_-]+'
+    'name': 'variable.other'
+'scopeName': 'source.scss'

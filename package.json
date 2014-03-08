@@ -1,0 +1,17 @@
+{
+  "name": "Atom-Syntax-highlighting-for-Sass",
+  "version": "0.1.0",
+  "description": "Perfect syntax highlighting for both SCSS and Sass in Atom",
+  "homepage": "https://github.com/P233/Atom-Syntax-highlighting-for-Sass",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/P233/Atom-Syntax-highlighting-for-Sass.git"
+  },
+  "bugs": {
+    "url": "https://github.com/P233/Atom-Syntax-highlighting-for-Sass/issues"
+  }
+}
