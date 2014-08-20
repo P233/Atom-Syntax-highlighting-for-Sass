@@ -409,4 +409,4 @@
   'variable':
     'match': '\\$[a-zA-Z0-9_-]+'
     'name': 'variable.other.value'
-'scopeName': 'source.scss'
+'scopeName': 'source.css.scss'
